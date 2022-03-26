@@ -13,7 +13,6 @@ export default class CourseController{
 
     public store = async (req: Request, res: Response): Promise<Response> => {
         const result = await this.service.store((req.body as unknown) as ICourse);
-        console.log('passei aqui: '+ result)
         return res.send(result);
     }
 
