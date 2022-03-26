@@ -12,6 +12,6 @@ export default class Course implements ICourse{
     @Column({length: '255'})
     description_course: string;
 
-    @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP"})
-    date_time: string;
+    @Column({ type: "timestamp"})
+    date_time: Date;
 }

@@ -17,6 +17,7 @@ export default class CourseController{
     }
 
     public list = async(req:Request, res:Response): Promise<Response> =>{
+        await this.service.removeCourses();
         const result = await this.service.list();
         return res.send(result);
     }

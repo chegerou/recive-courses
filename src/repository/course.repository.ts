@@ -1,3 +1,4 @@
+import { DeleteResult } from "typeorm";
 import ICourse from "../interface/course.interface";
 import Database from "../models";
 import Course from "../models/course.model";
@@ -11,4 +12,6 @@ export default class CourseRepository {
     public store = async(data:ICourse): Promise<ICourse> => this.repository.save(data);
 
     public list = async():Promise<ICourse[]> => this.repository.find();
+    
+    public removeData= async(id:number): Promise<DeleteResult> => this.repository.delete(id);
 }
