@@ -13,5 +13,5 @@ export default class CourseRepository {
 
     public list = async():Promise<ICourse[]> => this.repository.find();
     
-    public removeData= async(id:number): Promise<DeleteResult> => this.repository.delete(id);
+    public remove= async(id:number): Promise<DeleteResult> => this.repository.delete(id);
 }
