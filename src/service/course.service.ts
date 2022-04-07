@@ -12,16 +12,17 @@ export default class CourseService{
     public store = async(data: ICourse): Promise<ICourse> => this.repository.store(data);
     public list = async(): Promise<ICourse[]> => this.repository.list(); 
 
-    public removeCourses= async(): Promise<void> => {
+    public removeCourses= async(): Promise<any> => {
         const courses = await this.repository.list();
 
-        courses.map(async course =>{
-            let courseDate = Utils.formatData(new Date(course.date_time));
+        const promise = courses.map(async course =>{
+            let courseDate = Utils.formatData(course.date_time);
             let currentDate = Utils.formatData(new Date());
-            if(courseDate < currentDate){
+            if(currentDate > courseDate){
                 await this.repository.removeData(course.id);
             }
         });
 
+        return Promise.all(promise);
     }
 }
