@@ -12,7 +12,8 @@ Esse é um projeto que possui o intuito de agrupar todos os cursos gratuitos do 
 - [x] Tabela cursos(id, descricao, url).
 - [x] Estrutura padrão do projeto no back-end.
 - [x] CRUD dos cursos.
-- [] Limpar os cursos da base todo final do dia.
-- [] Criar estrutura padrão para o front-end.
-- [] Layout de visualização e cadastramento de cursos.
+- [x] Limpar os cursos da base todo final do dia.
+- [x] Criar estrutura padrão para o front-end.
+- [x] Layout de visualização e cadastramento de cursos.
+- [x] Adicionar validacoes para não termos links falsos.
 - [] Deploy para o heroku.
