@@ -1,13 +1,15 @@
-import { DeleteResult } from "typeorm";
+import { DeleteResult, Repository } from "typeorm";
 import ICourse from "../interface/course.interface";
 import Database from "../models";
 import Course from "../models/course.model";
 
 
 export default class CourseRepository {
-    private repository = Database.connection.getRepository(Course);
+    private repository: Repository<ICourse>
 
-    constructor(){ }
+    constructor(){ 
+        this.repository = Database.connection.getRepository(Course);
+    }
 
     public store = async(data:ICourse): Promise<ICourse> => this.repository.save(data);
 
