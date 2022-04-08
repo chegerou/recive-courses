@@ -6,7 +6,8 @@
   "scripts": {
     "start": "tsc -p . && nodemon dist/server.js",
     "dev": "nodemon --watch 'src/' --exec \"ts-node src/server.ts\" -e ts",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "start-production": "nodemon dist/server.js"
   },
   "author": "chegerou",
   "license": "ISC",
