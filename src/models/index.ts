@@ -10,14 +10,17 @@ export default class Database {
         dotenv.config();
         let connectionOptions: DataSourceOptions = {
             name: `default`,
-            type: 'mysql',
+            type: 'postgres',
             host: process.env.DB_HOSTNAME,
             port: (process.env.DB_PORT as unknown) as number,
             username: process.env.DB_USERNAME,
             password: process.env.DB_PASSWORD,
             database: process.env.DB_NAME,
             entities: [Course],
-            synchronize: true,            
+            synchronize: true,
+            extra: {
+                ssl: {rejectUnauthorized: false}
+            },    
         };
         if (process.env.DB_PASSWORD) {
             Object.assign(connectionOptions, {

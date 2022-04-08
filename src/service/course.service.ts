@@ -21,6 +21,7 @@ export default class CourseService{
                 throw new ErrorUtils('Invalid Description').showError();
             }
             
+            data.date_time = new Date();
             return this.repository.store(data);
         } catch (err) {
             return err;
