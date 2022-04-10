@@ -17,7 +17,7 @@ export default class App {
 
     private middleware(){
         this.server.use(Express.json());
-        this.server.use(Cors({origin: process.env.ORIGIN_ACESS}))
+        this.server.use(Cors())
     }
 
     private routes(){        
