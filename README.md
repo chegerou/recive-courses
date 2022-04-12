@@ -16,4 +16,4 @@ Esse é um projeto que possui o intuito de agrupar todos os cursos gratuitos do 
 - [x] Criar estrutura padrão para o front-end.
 - [x] Layout de visualização e cadastramento de cursos.
 - [x] Adicionar validacoes para não termos links falsos.
-- [] Deploy para o heroku.
+- [x] Deploy para o heroku.
