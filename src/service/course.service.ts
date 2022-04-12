@@ -35,9 +35,8 @@ export default class CourseService{
         const courses = await this.repository.list();
 
         const promise = courses.map(async course =>{
-            let courseDate = DateUtils.stringToDate(course.date_time.toLocaleString());
-            let currentDate = DateUtils.stringToDate(new Date().toLocaleString());
-            if(currentDate > courseDate){
+            let isSaturday = new Date().getDay() === 6 ? true: false;
+            if(isSaturday){
                 await this.repository.remove(course.id);
             }
         });
